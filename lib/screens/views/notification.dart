@@ -45,6 +45,7 @@ class ViewNotificationState extends State<ViewNotification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Student')),
+      //body: SingleChildScrollView(
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20),

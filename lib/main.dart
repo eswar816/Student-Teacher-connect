@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rljit_app/screens/authentication/mainPage.dart';
 import 'package:rljit_app/screens/authentication/welcomePage.dart';
 import 'package:rljit_app/screens/home/welcome.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Connect',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -34,3 +36,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Future<void> main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   SharedPreferences prefs=await SharedPreferences.getInstance();
+//   var email = prefs.getString('_email');
+//   runApp(MaterialApp(SignUpPage: email == null ? WelcomePage() : MainPage()));
+// }

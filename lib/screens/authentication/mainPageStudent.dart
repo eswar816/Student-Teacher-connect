@@ -5,7 +5,6 @@ import 'package:rljit_app/screens/views/ViewAssignment.dart';
 import 'package:rljit_app/screens/views/ViewNotes.dart';
 import 'package:rljit_app/screens/views/ViewTimetable.dart';
 import 'package:rljit_app/screens/views/notification.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 
 class MainPageStudent extends StatefulWidget {
@@ -124,7 +123,7 @@ class _MainPageStudentState extends State<MainPageStudent> {
             ],
             color: Colors.white),
         child: Text(
-          'View Notification',
+          'View Circulars',
           style: TextStyle(fontSize: 20, color: Color(0xff62cbe7)),
         ),
       ),

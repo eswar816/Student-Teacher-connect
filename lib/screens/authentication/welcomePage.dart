@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:rljit_app/screens/authentication/loginPage.dart';
 import 'package:rljit_app/screens/authentication/signup.dart';
 import 'package:rljit_app/screens/home/admission.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key key, this.title}) : super(key: key);

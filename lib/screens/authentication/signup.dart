@@ -6,6 +6,7 @@ import 'package:rljit_app/models/users.dart';
 import 'package:rljit_app/screens/authentication/Widget/bezierContainer.dart';
 import 'package:rljit_app/screens/authentication/loginPage.dart';
 import 'package:rljit_app/services/authenticate.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -227,6 +228,8 @@ class _SignUpPageState extends State<SignUpPage> {
              print("inside login email and pass Result.uid = " + result.uid);
              Toast.show(result.uid, context, duration: Toast.LENGTH_LONG, gravity:  Toast.TOP);
 
+             //SharedPreferences prefs = await SharedPreferences.getInstance();
+             //prefs.setString('email', _email);
              Navigator.push(
                context,
                MaterialPageRoute(builder: (context) => LoginPage()),

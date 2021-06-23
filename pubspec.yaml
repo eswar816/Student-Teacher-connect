@@ -49,12 +49,11 @@ dependencies:
 
   google_maps_flutter: ^2.0.6
 
-
-  animated_text_kit: ^4.2.1
-
   flutter_plugin_pdf_viewer:
   file_picker: ^3.0.2+2
   firebase_storage:
+  session: ^0.5.1
+  shared_preferences: ^0.5.7+3
 
 
 dev_dependencies:

@@ -196,6 +196,7 @@ class _FirstPageState extends State<FirstPage> {
       //   title: Text("Documents"),
       // ),
       body: Column(
+      //body: SingleChildScrollView(
         children: [
           Card(
             elevation: 0.8,
@@ -372,36 +373,36 @@ class _FirstPageState extends State<FirstPage> {
                       ],
                     ),
 
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Enter subject Code :"),
-                        SizedBox(width: 20,),
-                        Expanded(
-                          child: TextFormField(
-                            textCapitalization: TextCapitalization.characters,
-                            onChanged: (val){
-                              setState(() {
-                                subjectCode = val.toUpperCase();
-                                if(dropdownValue == 1){
-                                  completeData = dropdownValue.toString() + "-"+dropdownCycle  + "-"+subjectCode;
-                                }else{
-                                  completeData = dropdownValue.toString() + "-"+ dropdownSem + "-"+subjectCode;
-                                }
-                              });
-
-                            },
-                            validator: (value) {
-                              if (value.isEmpty) {
-                                return 'Please enter some text';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   crossAxisAlignment: CrossAxisAlignment.center,
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     Text("Enter subject Code :"),
+                    //     SizedBox(width: 20,),
+                    //     Expanded(
+                    //       child: TextFormField(
+                    //         textCapitalization: TextCapitalization.characters,
+                    //         onChanged: (val){
+                    //           setState(() {
+                    //             subjectCode = val.toUpperCase();
+                    //             if(dropdownValue == 1){
+                    //               completeData = dropdownValue.toString() + "-"+dropdownCycle  + "-"+subjectCode;
+                    //             }else{
+                    //               completeData = dropdownValue.toString() + "-"+ dropdownSem + "-"+subjectCode;
+                    //             }
+                    //           });
+                    //
+                    //         },
+                    //         validator: (value) {
+                    //           if (value.isEmpty) {
+                    //             return 'Please enter some text';
+                    //           }
+                    //           return null;
+                    //         },
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
 
                     SizedBox(height: 20.0,),
                     Text(
