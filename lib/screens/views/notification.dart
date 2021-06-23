@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 
@@ -8,9 +9,49 @@ class ViewNotification extends StatefulWidget {
   @override
   ViewNotificationState createState() => ViewNotificationState();
 }
-
-
 class ViewNotificationState extends State<ViewNotification> {
+
+  final navTabs = [
+    FirstPage(),
+  ];
+
+  int _currentIndex = 0;
+  Color _iconColor = Colors.black;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Student')),
+      body: navTabs[_currentIndex],
+      bottomNavigationBar: CurvedNavigationBar(
+        color: Colors.blue,
+        backgroundColor: Colors.white,
+        buttonBackgroundColor: Colors.blue,
+        height: 45,
+        index: _currentIndex,
+        items: <Widget>[
+          Icon(Icons.notifications,size:30,color:Colors.white,),
+        ],
+        animationDuration: Duration(milliseconds: 500),
+        animationCurve: Curves.fastOutSlowIn,
+        onTap: (index){
+
+          setState(() {
+            _currentIndex = index;
+
+          });
+          debugPrint("Current nav index $index $_currentIndex $_iconColor");
+        },
+      ),
+    );
+  }
+}
+
+class FirstPage extends StatefulWidget {
+  @override
+  _FirstPageState createState() => _FirstPageState();
+}
+class _FirstPageState extends State<FirstPage> {
 
 
   String notification1 = "";
@@ -19,6 +60,7 @@ class ViewNotificationState extends State<ViewNotification> {
   String notification4 = "";
   final CollectionReference mainReference = Firestore.instance
       .collection('notification');
+
 
 
   @override
@@ -41,13 +83,13 @@ class ViewNotificationState extends State<ViewNotification> {
   }
 
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Student')),
+      //appBar: AppBar(title: Text('Student')),
       //body: SingleChildScrollView(
-      body: SingleChildScrollView(
-        child: Container(
+        body :  Container(
           padding: EdgeInsets.symmetric(horizontal: 20),
           height: MediaQuery
               .of(context)
@@ -72,14 +114,14 @@ class ViewNotificationState extends State<ViewNotification> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                height: 80,
+                height: 10,
               ),
               notification(),
             ],
           ),
         ),
 
-      ),
+      //),
     );
   }
 
