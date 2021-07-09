@@ -6,7 +6,6 @@ import 'package:rljit_app/models/users.dart';
 import 'package:rljit_app/screens/authentication/Widget/bezierContainer.dart';
 import 'package:rljit_app/screens/authentication/loginPage.dart';
 import 'package:rljit_app/services/authenticate.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 
 class SignUpPage extends StatefulWidget {

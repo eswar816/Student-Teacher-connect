@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rljit_app/screens/storage/UploadAssignment.dart';
+import 'package:rljit_app/screens/storage/ViewAssignment.dart';
 import 'package:rljit_app/screens/storage/uploadNotes.dart';
 import 'package:rljit_app/screens/storage/uploadTimetable.dart';
 
@@ -100,6 +101,34 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
+  Widget _viewButton() {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ViewAssignment()));
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 13),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Color(0xff62cbff).withAlpha(100),
+                  offset: Offset(2, 4),
+                  blurRadius: 8,
+                  spreadRadius: 2)
+            ],
+            color: Colors.white),
+        child: Text(
+          'View Assignment',
+          style: TextStyle(fontSize: 20, color: Color(0xff62cbe7)),
+        ),
+      ),
+    );
+  }
+
 
 
   Widget _title() {
@@ -171,6 +200,10 @@ class _MainPageState extends State<MainPage> {
                 height: 20,
               ),
               _assignmentButton(),
+              SizedBox(
+                height: 20,
+              ),
+              _viewButton(),
             ],
           ),
         ),

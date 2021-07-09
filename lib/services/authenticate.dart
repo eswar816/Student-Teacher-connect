@@ -6,6 +6,11 @@ class AuthService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  //Stream<User> get authStateChanges => _auth.authStateChanges();
+  Stream<String> get onAuthStateChanged =>
+      _auth.onAuthStateChanged.map(
+            (FirebaseUser user) => user?.uid,
+      );
   User _createUserFromFB(FirebaseUser user, String name, String usn){
 
     return user!= null ? User(uid:user.uid,name: name,usn: usn) : null;
@@ -62,7 +67,9 @@ class AuthService {
   }
 
 
-
+  Future<void> resetPassword(String email) async {
+    await _auth.sendPasswordResetEmail(email: email);
+  }
 
 }
 

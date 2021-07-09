@@ -5,6 +5,7 @@ import 'package:rljit_app/screens/views/ViewAssignment.dart';
 import 'package:rljit_app/screens/views/ViewNotes.dart';
 import 'package:rljit_app/screens/views/ViewTimetable.dart';
 import 'package:rljit_app/screens/views/notification.dart';
+import 'package:rljit_app/screens/views/studentAssignmentUpload.dart';
 
 
 class MainPageStudent extends StatefulWidget {
@@ -17,6 +18,8 @@ class MainPageStudent extends StatefulWidget {
 }
 
 class _MainPageStudentState extends State<MainPageStudent> {
+
+
   Widget _notesButton() {
     return InkWell(
       onTap: () {
@@ -95,6 +98,34 @@ class _MainPageStudentState extends State<MainPageStudent> {
             color: Colors.white),
         child: Text(
           'View Assignment',
+          style: TextStyle(fontSize: 20, color: Color(0xff62cbe7)),
+        ),
+      ),
+    );
+  }
+
+  Widget _uploadassignmentButton() {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => StudentAssignUpload()));
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 13),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Color(0xff62cbff).withAlpha(100),
+                  offset: Offset(2, 4),
+                  blurRadius: 8,
+                  spreadRadius: 2)
+            ],
+            color: Colors.white),
+        child: Text(
+          'Upload Assignment',
           style: TextStyle(fontSize: 20, color: Color(0xff62cbe7)),
         ),
       ),
@@ -201,6 +232,10 @@ class _MainPageStudentState extends State<MainPageStudent> {
                 height: 20,
               ),
               _assignmentButton(),
+              SizedBox(
+                height: 20,
+              ),
+              _uploadassignmentButton(),
               SizedBox(
                 height: 20,
               ),

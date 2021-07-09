@@ -4,6 +4,7 @@ import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 import 'package:rljit_app/models/users.dart';
 import 'package:rljit_app/screens/authentication/mainPage.dart';
 import 'package:rljit_app/screens/authentication/mainPageStudent.dart';
+import 'package:rljit_app/screens/authentication/resetPassword.dart';
 import 'package:rljit_app/screens/authentication/signup.dart';
 import 'package:rljit_app/services/authenticate.dart';
 import 'package:toast/toast.dart';
@@ -122,6 +123,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
 
   Widget _submitButton() {
     return GestureDetector(
@@ -252,6 +254,35 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _forgotPasswordLabel() {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => resetPasswordPage()));
+      },
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 5),
+        padding: EdgeInsets.all(10),
+        alignment: Alignment.bottomCenter,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              'ForgotPassword',
+              style: TextStyle(
+                  color: Color(0xfff79c4f),
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _title() {
     return RichText(
       textAlign: TextAlign.center,
@@ -322,8 +353,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
                      */
-                    SizedBox(height: height * .055),
+                    SizedBox(height: 20),
                     _createAccountLabel(),
+                    _forgotPasswordLabel(),
                   ],
                 ),
               ),
