@@ -111,7 +111,7 @@ class _FirstPageState extends State<FirstPage> {
 
     documentsList.clear();
     final CollectionReference mainReference = Firestore.instance
-        .collection('files');
+        .collection('StudentAssignmentUpload');
 
     if(dropdownValue == 1){
       mainReference.document(dropdownValue.toString()+"-YEAR").collection(dropdownCycle).getDocuments()
@@ -389,38 +389,36 @@ class _FirstPageState extends State<FirstPage> {
                                         ),
                                       ],
                                     ),
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text("Enter subject Code :"),
+                                        SizedBox(width: 20,),
+                                        Expanded(
+                                          child: TextFormField(
+                                            textCapitalization: TextCapitalization.characters,
+                                            onChanged: (val){
+                                              setState(() {
+                                                subjectCode = val.toUpperCase();
+                                                if(dropdownValue == 1){
+                                                  completeData = dropdownValue.toString() + "-"+dropdownCycle  + "-"+subjectCode;
+                                                }else{
+                                                  completeData = dropdownValue.toString() + "-"+ dropdownSem + "-"+subjectCode;
+                                                }
+                                              });
 
-                                    // Row(
-                                    //   crossAxisAlignment: CrossAxisAlignment.center,
-                                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    //   children: [
-                                    //     Text("Enter subject Code :"),
-                                    //     SizedBox(width: 20,),
-                                    //     Expanded(
-                                    //       child: TextFormField(
-                                    //         textCapitalization: TextCapitalization.characters,
-                                    //         onChanged: (val){
-                                    //           setState(() {
-                                    //             subjectCode = val.toUpperCase();
-                                    //             if(dropdownValue == 1){
-                                    //               completeData = dropdownValue.toString() + "-"+dropdownCycle  + "-"+subjectCode;
-                                    //             }else{
-                                    //               completeData = dropdownValue.toString() + "-"+ dropdownSem + "-"+subjectCode;
-                                    //             }
-                                    //           });
-                                    //
-                                    //         },
-                                    //         validator: (value) {
-                                    //           if (value.isEmpty) {
-                                    //             return 'Please enter some text';
-                                    //           }
-                                    //           return null;
-                                    //         },
-                                    //       ),
-                                    //     ),
-                                    //   ],
-                                    // ),
-
+                                            },
+                                            validator: (value) {
+                                              if (value.isEmpty) {
+                                                return 'Please enter some text';
+                                              }
+                                              return null;
+                                            },
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                     SizedBox(height: 20.0,),
                                     Text(
                                       completeData,
@@ -463,7 +461,7 @@ class _FirstPageState extends State<FirstPage> {
                       ],
                     ),
                   ),
-                  (documentsList.length == 0) &( _searchStarted == true) ?
+                  (documentsList.length == 0) &( _searchStarted == true)?
                   Container(
                       color: Colors.lightBlue,
                       child: Center(
@@ -736,36 +734,6 @@ class _SecondPageState extends State<SecondPage> {
                           ),
                         ],
                       ),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      //   children: [
-                      //     Text("Select Subject :"),
-                      //     DropdownButton<String>(
-                      //
-                      //       value: dropdownsub,
-                      //       iconSize: 24,
-                      //       elevation: 16,
-                      //       style: TextStyle(color: Colors.deepPurple),
-                      //       underline: Container(
-                      //         height: 2,
-                      //         color: Colors.deepPurpleAccent,
-                      //       ),
-                      //       onChanged: (String newValue) {
-                      //         setState(() {
-                      //           dropdownsub = newValue;
-                      //           Toast.show(dropdownsub.toString(), context);
-                      //         });
-                      //       },
-                      //       items: _cse3
-                      //           .map<DropdownMenuItem<String>>((String value) {
-                      //         return DropdownMenuItem<String>(
-                      //           value: value,
-                      //           child: Text(value.toString()),
-                      //         );
-                      //       }).toList(),
-                      //     ),
-                      //   ],
-                      // ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

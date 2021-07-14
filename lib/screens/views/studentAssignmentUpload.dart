@@ -298,36 +298,6 @@ class _FirstPageState extends State<FirstPage> {
                           ),
                         ],
                       ),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      //   children: [
-                      //     Text("Select Subject :"),
-                      //     DropdownButton<String>(
-                      //
-                      //       value: dropdownsub,
-                      //       iconSize: 24,
-                      //       elevation: 16,
-                      //       style: TextStyle(color: Colors.deepPurple),
-                      //       underline: Container(
-                      //         height: 2,
-                      //         color: Colors.deepPurpleAccent,
-                      //       ),
-                      //       onChanged: (String newValue) {
-                      //         setState(() {
-                      //           dropdownsub = newValue;
-                      //           Toast.show(dropdownsub.toString(), context);
-                      //         });
-                      //       },
-                      //       items: _cse3
-                      //           .map<DropdownMenuItem<String>>((String value) {
-                      //         return DropdownMenuItem<String>(
-                      //           value: value,
-                      //           child: Text(value.toString()),
-                      //         );
-                      //       }).toList(),
-                      //     ),
-                      //   ],
-                      // ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -650,7 +620,7 @@ class _SecondPageState extends State<SecondPage> {
 
     documentsList.clear();
     final CollectionReference mainReference = Firestore.instance
-        .collection('assignment');
+        .collection('AssignmentMarks');
 
     if(dropdownValue == 1){
       mainReference.document(dropdownValue.toString()+"-YEAR").collection(dropdownCycle).getDocuments()

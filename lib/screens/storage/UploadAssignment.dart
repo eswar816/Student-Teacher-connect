@@ -10,7 +10,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:loading/indicator/ball_pulse_indicator.dart';
 import 'package:loading/loading.dart';
-import 'package:rljit_app/screens/authentication/mainPageStudent.dart';
 import 'package:toast/toast.dart';
 
 

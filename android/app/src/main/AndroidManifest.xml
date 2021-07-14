@@ -11,11 +11,11 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="rljit_app"
+        android:label="rljit"
         android:icon="@mipmap/ic_launcher">
 
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAPZUe9QBHFObz1tCxZIaTakvjDdbTE_pU"/>
+            android:value="AIzaSyDxMPvS-9LK1G2kTunw9ruR-kBs-SyZL9I"/>
 
         <activity
             android:name=".MainActivity"
